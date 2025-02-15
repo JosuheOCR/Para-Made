@@ -7,13 +7,24 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>FELIZ DIA DE SAN VALENTIN Made</h1>
-    <p>Te gustaria ser mi san valentin?</p>
-    <button id="propuesta">Sí, quiero</button>
+    <div class="container">
+        <!-- Texto inicial de San Valentín -->
+        <div id="introText">
+            <h1>FELIZ DÍA DE SAN VALENTÍN Made</h1>
+            <p id="subText">¿Te gustaría ser mi San Valentín?</p>
+        </div>
 
-    <div id="textos" class="hidden">
-        <h1>Te amo Made, sabia que dirias que si</h1>
-        <p>Puedes escribirme o llamarme cuando quieras, en general puedes hablarme cuando quieras, porque sin importar el tiempo que pase, seras para mi, tu y solo tu.</p>
+        <!-- Contenedor de gif -->
+        <div id="gifContainer" class="gif-container">
+            <!-- Aquí agregarías tu gif o imagen -->
+        </div>
+
+        <!-- Botones -->
+        <button id="siBtn">Sí</button>
+        <button id="noBtn">No</button>
+
+        <!-- Mensaje final -->
+        <div id="messageContainer" style="display:none;"></div>
     </div>
 
     <script src="script.js"></script>
