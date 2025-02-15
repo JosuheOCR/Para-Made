@@ -39,13 +39,15 @@ document.getElementById('noBtn').addEventListener('click', function() {
     // Incrementar el contador de clics en "No"
     noButtonClickCount++;
 
-    // Aumentar el tamaño del botón "Sí" según los clics en "No"
-    siButton.style.fontSize = (20 + noButtonClickCount * 10) + 'px'; // Aumenta el tamaño del texto
-    siButton.style.padding = (10 + noButtonClickCount * 5) + 'px ' + (20 + noButtonClickCount * 10) + 'px'; // Aumenta el padding
+    // Manejo del evento para el botón "Sí"
+document.getElementById('siBtn').addEventListener('click', function() {
+    // Ocultar los botones y el mensaje de selección
+    document.getElementById('introText').style.display = 'none';
+    document.getElementById('gifContainer').style.display = 'none';
+    document.getElementById('siBtn').style.display = 'none';
+    document.getElementById('noBtn').style.display = 'none';
 
-    // Limitar el tamaño máximo para que no se haga demasiado grande
-    if (noButtonClickCount > 5) {
-        siButton.style.fontSize = '80px';
-        siButton.style.padding = '50px 80px';
-    }
+    // Mostrar el mensaje especial
+    document.getElementById('messageContainer').style.display = 'block';
+    document.getElementById('messageContainer').innerHTML = '<h1>Te amo Made</h1><p>Sabía que dirías que sí, puedes escribirme o llamarme cuando quieras, en general puedes hablarme cuando quieras, porque sin importar el tiempo que pase serás para mí, tú y solo tú.</p>';
 });
