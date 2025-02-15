@@ -1,0 +1,74 @@
+body {
+    background-color: #f7a8d7; /* Rosa claro */
+    height: 100vh;
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    text-align: center;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 10px;
+    border: 2px solid #FFC0CB; /* Bordes rosa */
+    border-radius: 10px;
+    background-color: #ff77b8; /* Rosa fuerte */
+    color: white;
+}
+
+button:hover {
+    background-color: #f55f9e; /* Efecto hover */
+}
+
+#siBtn {
+    font-size: 20px;
+}
+
+#messageContainer h1 {
+    font-size: 2em;
+    color: #ff77b8;
+}
+
+#messageContainer p {
+    font-size: 1.2em;
+    color: #ff4d94;
+}
+
+/* Corazones flotando */
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.heart {
+    position: absolute;
+    top: 100%;
+    font-size: 30px;
+    animation: float 4s linear infinite;
+    opacity: 0.5;
+}
+
+.heart:nth-child(odd) {
+    animation-duration: 6s;
+}
+
+.heart:nth-child(even) {
+    animation-duration: 8s;
+}
