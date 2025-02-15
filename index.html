@@ -3,20 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Propuesta de San Valentín</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Propuesta de San Valentín para Made</title>
+    <style>
+        /* Estilo general */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #ffccff; /* Rosa claro */
+            overflow: hidden;
+            position: relative;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        /* Estilos del texto inicial */
+        #introText h1 {
+            font-size: 36px;
+            color: #ff0066; /* Rosa fuerte */
+            margin-bottom: 5px;
+        }
+
+        #introText p {
+            font-size: 20px;
+            color: #ff66b2;
+        }
+
+        /* Estilo de los botones */
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        #siBtn {
+            background-color: #009705; /* Verde */
+            color: white;
+            border: 2px solid #FFC0CB; /* Bordes rosa */
+        }
+
+        #noBtn {
+            background-color: #FF5733; /* Rojo */
+            color: white;
+            border: 2px solid #FFC0CB;
+        }
+
+        #siBtn:hover {
+            background-color: #053a03; /* Verde oscuro */
+        }
+
+        #noBtn:hover {
+            background-color: #641e0d; /* Rojo oscuro */
+        }
+
+        /* Estilo para el mensaje final */
+        #messageContainer {
+            font-size: 24px;
+            color: #FF0000;
+            text-shadow: 2px 2px 4px #000;
+            display: none;
+            padding: 20px;
+            font-weight: bold;
+            animation: pulse 0.5s infinite alternate;
+        }
+
+        /* Animación de escala para el mensaje */
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(1.1);
+            }
+        }
+
+        /* Animación de los corazones flotantes */
+        @keyframes floatingHearts {
+            0% { transform: translateY(0); opacity: 1; }
+            100% { transform: translateY(-200px); opacity: 0; }
+        }
+
+        .heart {
+            position: absolute;
+            font-size: 30px;
+            color: #ff0066;
+            animation: floatingHearts 5s infinite ease-in;
+            opacity: 0;
+        }
+
+        .heart:nth-child(odd) {
+            animation-duration: 6s;
+        }
+
+        .heart:nth-child(even) {
+            animation-duration: 4s;
+        }
+
+    </style>
 </head>
 <body>
     <div class="container">
-        <!-- Texto inicial de San Valentín -->
+        <!-- Texto inicial -->
         <div id="introText">
             <h1>FELIZ DÍA DE SAN VALENTÍN Made</h1>
-            <p id="subText">¿Te gustaría ser mi San Valentín?</p>
-        </div>
-
-        <!-- Contenedor de gif -->
-        <div id="gifContainer" class="gif-container">
-            <!-- Aquí agregarías tu gif o imagen -->
+            <p>¿Te gustaría ser mi San Valentín?</p>
         </div>
 
         <!-- Botones -->
@@ -24,9 +122,46 @@
         <button id="noBtn">No</button>
 
         <!-- Mensaje final -->
-        <div id="messageContainer" style="display:none;"></div>
+        <div id="messageContainer"></div>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        // Generar corazones flotantes en el fondo
+        const body = document.body;
+        for (let i = 0; i < 30; i++) {
+            let heart = document.createElement('span');
+            heart.classList.add('heart');
+            heart.innerHTML = '❤️';
+            body.appendChild(heart);
+            const randomX = Math.random() * window.innerWidth;
+            const randomDelay = Math.random() * 5 + 's';  // Generar retraso aleatorio
+            heart.style.left = randomX + 'px';
+            heart.style.animationDelay = randomDelay;
+        }
+
+        // Evento para el botón "Sí"
+        document.getElementById('siBtn').addEventListener('click', function() {
+            // Ocultar el texto inicial y los botones
+            document.getElementById('introText').style.display = 'none';
+            document.getElementById('siBtn').style.display = 'none';
+            document.getElementById('noBtn').style.display = 'none';
+
+            // Mostrar el mensaje final
+            document.getElementById('messageContainer').style.display = 'block';
+            document.getElementById('messageContainer').innerHTML = 'Te amo Made, sabía que dirías que sí, puedes escribirme o llamarme cuando quieras, en general puedes hablarme cuando quieras, porque sin importar el tiempo que pase serás para mí tú y solo tú.';
+        });
+
+        // Evento para el botón "No"
+        let noButtonClickCount = 0;
+        document.getElementById('noBtn').addEventListener('click', function() {
+            // Aumentar el tamaño del botón "Sí"
+            const siBtn = document.getElementById('siBtn');
+            noButtonClickCount++;
+
+            // Aumentar progresivamente el tamaño del botón "Sí" con cada clic en "No"
+            siBtn.style.fontSize = (16 + noButtonClickCount * 10) + 'px';
+            siBtn.style.padding = (10 + noButtonClickCount * 5) + 'px ' + (20 + noButtonClickCount * 10) + 'px';
+        });
+    </script>
 </body>
 </html>
