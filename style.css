@@ -1,70 +1,74 @@
 body {
-    background-color: #f6c5d7;
-    font-family: 'Arial', sans-serif;
-    overflow: hidden;
-    margin: 0;
+    background-color: #f7a8d7; /* Rosa claro */
     height: 100vh;
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+.container {
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
     flex-direction: column;
+    height: 100%;
+    text-align: center;
 }
 
-h1 {
-    font-size: 3rem;
-    color: #e91e63;
-    margin: 0;
-}
-
-p {
-    font-size: 1.2rem;
-    color: #f06292;
-}
-
-#propuesta {
-    font-size: 1.5rem;
-    color: #c2185b;
-    margin-top: 20px;
-    cursor: pointer;
+button {
     padding: 10px 20px;
-    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 10px;
+    border: 2px solid #FFC0CB; /* Bordes rosa */
     border-radius: 10px;
-    background-color: #f06292;
+    background-color: #ff77b8; /* Rosa fuerte */
     color: white;
-    transition: transform 0.3s;
 }
 
-#propuesta:hover {
-    transform: scale(1.1);
+button:hover {
+    background-color: #f55f9e; /* Efecto hover */
 }
 
-.corazon {
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    background-color: red;
-    clip-path: polygon(50% 0%, 100% 35%, 75% 100%, 25% 100%, 0% 35%);
-    opacity: 0.8;
-    animation: flotar 5s ease-in-out infinite;
+#siBtn {
+    font-size: 20px;
 }
 
-@keyframes flotar {
+#messageContainer h1 {
+    font-size: 2em;
+    color: #ff77b8;
+}
+
+#messageContainer p {
+    font-size: 1.2em;
+    color: #ff4d94;
+}
+
+/* Corazones flotando */
+@keyframes float {
     0% {
         transform: translateY(0) rotate(0deg);
-    }
-    50% {
-        transform: translateY(-100px) rotate(180deg);
+        opacity: 1;
     }
     100% {
-        transform: translateY(0) rotate(360deg);
+        transform: translateY(-100px) rotate(360deg);
+        opacity: 0;
     }
 }
 
-.corazon:nth-child(even) {
+.heart {
+    position: absolute;
+    top: 100%;
+    font-size: 30px;
+    animation: float 4s linear infinite;
+    opacity: 0.5;
+}
+
+.heart:nth-child(odd) {
     animation-duration: 6s;
 }
 
-.hidden {
-    display: none;
+.heart:nth-child(even) {
+    animation-duration: 8s;
 }
