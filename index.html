@@ -3,23 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Propuesta de San Valentín para Made</title>
+    <title>Propuesta de San Valentín</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <div class="container">
-        <div id="gifContainer">
-            <!-- Aquí puedes poner un GIF si lo deseas -->
+        <!-- Texto inicial de San Valentín -->
+        <div id="introText">
+            <h1>FELIZ DÍA DE SAN VALENTÍN Made</h1>
+            <p id="subText">¿Te gustaría ser mi San Valentín?</p>
         </div>
 
+        <!-- Contenedor de gif -->
+        <div id="gifContainer" class="gif-container">
+            <!-- Aquí agregarías tu gif o imagen -->
+        </div>
+
+        <!-- Botones -->
         <button id="siBtn">Sí</button>
         <button id="noBtn">No</button>
 
-        <div id="messageContainer" style="display: none;">
-            <h1>Te amo Made</h1>
-            <p>Sabía que dirías que sí, puedes escribirme o llamarme cuando quieras, en general puedes hablarme cuando quieras, por que sin importar el tiempo que pase serás para mí, tú y solo tú.</p>
-        </div>
+        <!-- Mensaje final -->
+        <div id="messageContainer" style="display:none;"></div>
     </div>
 
     <script src="script.js"></script>
