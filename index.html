@@ -16,10 +16,13 @@
             overflow: hidden;
             position: relative;
             font-family: Arial, sans-serif;
+            flex-direction: column;
+            justify-content: flex-start; /* Para que el contenido esté arriba */
         }
 
         .container {
             text-align: center;
+            z-index: 10;
         }
 
         /* Estilos del texto inicial */
@@ -42,6 +45,7 @@
             cursor: pointer;
             border-radius: 5px;
             transition: all 0.3s ease;
+            z-index: 10;
         }
 
         #siBtn {
@@ -88,7 +92,7 @@
         /* Animación de los corazones flotantes */
         @keyframes floatingHearts {
             0% { transform: translateY(0); opacity: 1; }
-            100% { transform: translateY(-200px); opacity: 0; }
+            100% { transform: translateY(-100px); opacity: 0; }
         }
 
         .heart {
@@ -97,6 +101,8 @@
             color: #ff0066;
             animation: floatingHearts 5s infinite ease-in;
             opacity: 0;
+            bottom: 0;
+            animation-delay: 0s;
         }
 
         .heart:nth-child(odd) {
@@ -126,7 +132,7 @@
     </div>
 
     <script>
-        // Generar corazones flotantes en el fondo
+        // Generar corazones flotantes desde la parte inferior
         const body = document.body;
         for (let i = 0; i < 30; i++) {
             let heart = document.createElement('span');
