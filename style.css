@@ -13,17 +13,18 @@ body {
     text-align: center;
 }
 
+#introText h1, #introText p, #messageContainer {
+    color: white;
+    text-shadow: 2px 2px 4px #000;
+}
+
 #introText h1 {
     font-size: 36px;
-    color: #ff0066; /* Rosa más oscuro */
-    font-family: 'Arial', sans-serif;
     margin-bottom: 5px;
 }
 
 #introText p {
     font-size: 20px;
-    color: #ff66b2;
-    font-family: 'Arial', sans-serif;
 }
 
 button {
@@ -65,9 +66,9 @@ button {
 
 #messageContainer {
     font-size: 30px;
-    color: #FF0000; /* Rojo */
+    color: white; /* Blanco */
+    text-shadow: 2px 2px 4px #000; /* Borde negro simulado */
     font-family: 'Arial', sans-serif;
-    text-shadow: 2px 2px 4px #000; /* Borde simulado */
     animation: pulse 0.5s infinite alternate;
     display: none;
 }
