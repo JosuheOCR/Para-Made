@@ -17,7 +17,6 @@
             position: relative;
             font-family: Arial, sans-serif;
             flex-direction: column;
-            justify-content: flex-start; /* Para que el contenido esté arriba */
         }
 
         .container {
@@ -26,15 +25,18 @@
         }
 
         /* Estilos del texto inicial */
+        #introText h1, #introText p, #messageContainer {
+            color: white;
+            text-shadow: 2px 2px 4px #000;
+        }
+
         #introText h1 {
             font-size: 36px;
-            color: #ff0066; /* Rosa fuerte */
             margin-bottom: 5px;
         }
 
         #introText p {
             font-size: 20px;
-            color: #ff66b2;
         }
 
         /* Estilo de los botones */
@@ -71,8 +73,6 @@
         /* Estilo para el mensaje final */
         #messageContainer {
             font-size: 24px;
-            color: #FF0000;
-            text-shadow: 2px 2px 4px #000;
             display: none;
             padding: 20px;
             font-weight: bold;
