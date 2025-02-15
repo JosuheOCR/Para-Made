@@ -1,68 +1,98 @@
 body {
-    background-color: #f7a8d7; /* Rosa claro */
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 100vh;
     margin: 0;
-    position: relative;
+    background-color: #ffccff; /* Rosa claro */
     overflow: hidden;
-    font-family: Arial, sans-serif;
+    position: relative;
 }
 
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: 100%;
     text-align: center;
+}
+
+#introText h1 {
+    font-size: 36px;
+    color: #ff0066; /* Rosa más oscuro */
+    font-family: 'Arial', sans-serif;
+    margin-bottom: 5px;
+}
+
+#introText p {
+    font-size: 20px;
+    color: #ff66b2;
+    font-family: 'Arial', sans-serif;
 }
 
 button {
     padding: 10px 20px;
     font-size: 16px;
-    cursor: pointer;
     margin: 10px;
-    border: 2px solid #FFC0CB; /* Bordes rosa */
-    border-radius: 10px;
-    background-color: #ff77b8; /* Rosa fuerte */
-    color: white;
-}
-
-button:hover {
-    background-color: #f55f9e; /* Efecto hover */
+    cursor: pointer;
 }
 
 #siBtn {
-    font-size: 20px;
+    padding: 10px 20px; 
+    font-size: 16px;
+    margin: 10px;
+    cursor: pointer;
+    background-color: #009705; /* Verde */
+    color: white;
+    border: 2px solid #FFC0CB; /* Bordes rosa */
+    border-radius: 10px; /* Esquinas redondeadas */
 }
 
-#messageContainer h1 {
-    font-size: 2em;
-    color: #ff77b8;
+#noBtn {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 10px;
+    cursor: pointer;
+    background-color: #FF5733; /* Rojo */
+    color: white;
+    border: 2px solid #FFC0CB; /* Bordes rosa */
+    border-radius: 10px; /* Esquinas redondeadas */
 }
 
-#messageContainer p {
-    font-size: 1.2em;
-    color: #ff4d94;
+#noBtn:hover {
+    background-color: #641e0d; /* Rojo oscuro */
 }
 
-/* Corazones flotando */
-@keyframes float {
-    0% {
-        transform: translateY(0) rotate(0deg);
-        opacity: 1;
+#siBtn:hover {
+    background-color: #053a03; /* Verde oscuro */
+}
+
+#messageContainer {
+    font-size: 30px;
+    color: #FF0000; /* Rojo */
+    font-family: 'Arial', sans-serif;
+    text-shadow: 2px 2px 4px #000; /* Borde simulado */
+    animation: pulse 0.5s infinite alternate;
+    display: none;
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(1);
     }
-    100% {
-        transform: translateY(-100px) rotate(360deg);
-        opacity: 0;
+    to {
+        transform: scale(1.1); /* Zoom más suave */
     }
 }
 
+@keyframes floatingHearts {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(-200px); opacity: 0; }
+}
+
+/* Corazones flotantes */
 .heart {
     position: absolute;
-    top: 100%;
-    font-size: 30px;
-    animation: float 4s linear infinite;
-    opacity: 0.5;
+    color: #ff0066;
+    font-size: 25px;
+    animation: floatingHearts 5s infinite ease-in;
+    opacity: 0;
 }
 
 .heart:nth-child(odd) {
@@ -70,5 +100,11 @@ button:hover {
 }
 
 .heart:nth-child(even) {
-    animation-duration: 8s;
+    animation-duration: 4s;
+}
+
+/* Animación de los corazones */
+@keyframes pulseHeart {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.3); }
 }
